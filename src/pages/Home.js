@@ -47,7 +47,7 @@ const Home = () => {
 
       <Greeting />
 
-      <div className='grid grid-cols-1'>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:gap-2'>
 
         <Link to="dashboard">
           <Dashboard />

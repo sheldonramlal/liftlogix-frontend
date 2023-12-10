@@ -25,7 +25,7 @@ export const Login = () => {
 
       <h1 className='mb-20 font-poppins text-2xl text-center'>Track all your Workouts in one place</h1>
 
-      <h1 className='text-2xl lg:text-3xl  text-white font-bold font-poppins -mt-10 lg:-mt-32'>Login</h1>
+      <h1 className='text-2xl lg:text-3xl  text-white font-bold font-poppins -mt-10 '>Login</h1>
         
        <div className=' w-3/4  lg:w-1/3 bg-white p-5 rounded-lg mt-6'>
 
