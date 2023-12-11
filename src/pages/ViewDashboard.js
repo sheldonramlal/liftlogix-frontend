@@ -63,6 +63,7 @@ function ViewDashboard() {
         setShowInfo(!showInfo)
       }
 
+      {/*
       function findMostCommonTitle(workouts) {
         const titleMap = new Map();
       
@@ -70,7 +71,23 @@ function ViewDashboard() {
           const title = workout.title;
           titleMap.set(title, (titleMap.get(title) || 0) + 1);
         });
+      */}
+
+      function findMostCommonTitle(workouts) {
+        if (!workouts || !Array.isArray(workouts)) {
+          // Handle the case when workouts is null, undefined, or not an array
+          return null; // Or return a default value, or throw an error, depending on your use case
+        }
       
+        const titleMap = new Map();
+      
+        workouts.forEach(workout => {
+          const title = workout.title;
+          titleMap.set(title, (titleMap.get(title) || 0) + 1);
+        });
+      
+       
+      }
         let mostCommonTitle;
         let maxCount = 0;
       
