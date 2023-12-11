@@ -40,10 +40,20 @@ function ViewDashboard() {
       const totalReps = calculateSum(workouts, 'reps')
       const totalTime = calculateSum(workouts, 'time')
 
+      {/*
       const workoutsWithProduct = workouts.map(workout => ({
         ...workout,
         product: workout.load * workout.reps
       }));
+    */}
+
+    let workoutsWithProduct = [];
+      if (workouts) {
+        workoutsWithProduct = workouts.map(workout => ({
+          ...workout,
+          product: workout.load * workout.reps
+        }));
+      }
 
       const totalSum = workoutsWithProduct.reduce((sum, workout) => sum + workout.product, 0);
 
