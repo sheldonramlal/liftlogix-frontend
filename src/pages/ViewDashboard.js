@@ -5,8 +5,8 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 function ViewDashboard() {
     const {workouts} = useWorkoutsContext()
 
-    function calculateSum(array, property) {
-        const total = array.reduce((accumulator, object) => {
+   async function calculateSum(array, property) {
+        const total = await array.reduce((accumulator, object) => {
           return accumulator + object[property];
         }, 0);
       
