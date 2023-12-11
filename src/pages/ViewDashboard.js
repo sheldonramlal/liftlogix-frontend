@@ -5,6 +5,8 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 function ViewDashboard() {
     const {workouts} = useWorkoutsContext()
 
+
+    {/* 
     function calculateSum(array, property) {
         const total =  array.reduce((accumulator, object) => {
           return accumulator + object[property];
@@ -12,6 +14,27 @@ function ViewDashboard() {
       
         return total;
       }
+      */}
+
+      function calculateSum(array, property) {
+        if (!Array.isArray(array) || array.length === 0) {
+          return 0; // Return default value if array is not valid or empty
+        }
+      
+        const total = array.reduce((accumulator, object) => {
+          const value = object[property];
+          
+          // Check if value is valid (not undefined or non-numeric)
+          if (typeof value === 'number' && !isNaN(value)) {
+            return accumulator + value; // Add valid numeric value to the accumulator
+          } else {
+            return accumulator; // Ignore invalid or non-numeric values
+          }
+        }, 0);
+      
+        return total;
+      }
+      
 
       const totalLoad = calculateSum(workouts, 'load')
       const totalReps = calculateSum(workouts, 'reps')
