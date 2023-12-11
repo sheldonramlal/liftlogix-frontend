@@ -97,7 +97,7 @@ function ViewDashboard() {
             
             <div className='text-xl font-poppins border flex flex-col items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500  rounded-lg p-5'>
                <p className='font-bold pb-3'> Total time </p>
-               <p>You've worked out a total of {totalTime} mins or {(totalTime / 60)} hours</p>
+               <p>You've worked out a total of {totalTime} mins or {(totalTime / 60).toFixed(2)} hours</p>
             </div>
         </div>
     </div>
