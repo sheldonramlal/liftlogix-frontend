@@ -85,9 +85,9 @@ function ViewDashboard() {
           const title = workout.title;
           titleMap.set(title, (titleMap.get(title) || 0) + 1);
         });
+             
       
-       
-      }
+
         let mostCommonTitle;
         let maxCount = 0;
       
