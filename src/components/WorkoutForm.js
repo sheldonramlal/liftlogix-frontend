@@ -48,7 +48,7 @@ const WorkoutForm = () => {
       setLoad('')
       setReps('')
       dispatch({type: 'CREATE_WORKOUT', payload: json})
-      navigate('/')
+      navigate('https://liftlogix.onrender.com/')
     }
 
   }
