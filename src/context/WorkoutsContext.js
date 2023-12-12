@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useEffect, useReducer } from 'react'
 
 export const WorkoutsContext = createContext()
 
@@ -24,7 +24,14 @@ export const workoutsReducer = (state, action) => {
 export const WorkoutsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(workoutsReducer, { 
     workouts: null
+  }, () => {
+    const localData = localStorage.getItem('workouts')
+    return localData ? JSON.parse(localData) : []
   })
+
+  useEffect(() => {
+    localStorage.setItem('workouts', JSON.stringify(state))
+  }, [state])
   
   return (
     <WorkoutsContext.Provider value={{ ...state, dispatch }}>
