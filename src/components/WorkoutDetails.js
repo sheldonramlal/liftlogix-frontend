@@ -24,6 +24,7 @@ const WorkoutDetails = ({ workout }) => {
 
     if (response.ok) {
       dispatch({type: 'DELETE_WORKOUT', payload: json})
+      localStorage.removeItem(JSON.stringify(json).key)
     }
   }
 

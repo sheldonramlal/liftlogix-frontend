@@ -3,8 +3,18 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
 
 function ViewDashboard() {
-    const {workouts} = useWorkoutsContext()
+  const [workouts, setWorkouts] = useState([])
 
+  useEffect(() => {
+    const storedWorkouts = localStorage.getItem('workouts');
+    if (storedWorkouts) {
+      setWorkouts(JSON.parse(storedWorkouts));
+    }
+  }, []);
+
+  {/*
+  const {workouts} = useWorkoutsContext()
+*/}
 
     {/* 
     function calculateSum(array, property) {
@@ -75,7 +85,7 @@ function ViewDashboard() {
 
       function findMostCommonTitle(workouts) {
         if (!workouts || !Array.isArray(workouts)) {
-          // Handle the case when workouts is null, undefined, or not an array
+
           return null; // Or return a default value, or throw an error, depending on your use case
         }
       
