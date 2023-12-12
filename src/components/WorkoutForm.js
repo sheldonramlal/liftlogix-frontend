@@ -48,7 +48,6 @@ const WorkoutForm = () => {
       setLoad('')
       setReps('')
       dispatch({type: 'CREATE_WORKOUT', payload: json})
-      localStorage.setItem('workouts',  JSON.stringify(json))
       navigate('/')
     }
 

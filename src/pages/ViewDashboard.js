@@ -3,18 +3,10 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
 
 function ViewDashboard() {
-  const [workouts, setWorkouts] = useState([])
-
-  useEffect(() => {
-    const storedWorkouts = localStorage.getItem('workouts');
-    if (storedWorkouts) {
-      setWorkouts(JSON.parse(storedWorkouts));
-    }
-  }, []);
-
-  {/*
+ 
+  
   const {workouts} = useWorkoutsContext()
-*/}
+
 
     {/* 
     function calculateSum(array, property) {

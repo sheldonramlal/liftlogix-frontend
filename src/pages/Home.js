@@ -30,27 +30,16 @@ const Home = () => {
 
       if (response.ok) {
         dispatch({type: 'SET_WORKOUTS', payload: json})
-        localStorage.setItem('workouts', JSON.stringify(json))
       }
     }
 
-    const cachedWorkouts = localStorage.getItem('workouts');
-
-    if (user && !workouts && cachedWorkouts) {
-      // Retrieve workouts from local storage if available
-      dispatch({ type: 'SET_WORKOUTS', payload: JSON.parse(cachedWorkouts) });
-    } else if (user) {
-      // Fetch workouts if not available in context or local storage
-      fetchWorkouts();
-    }
-  }, [dispatch, user, workouts]);
+  
     
-    {/*
     if(user){
       fetchWorkouts()
     }
 
-  }, [dispatch, user]) */}
+  }, [dispatch, user]) 
 
   const maxElements = 10
 
