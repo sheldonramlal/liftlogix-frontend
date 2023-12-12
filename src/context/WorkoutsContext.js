@@ -22,11 +22,9 @@ export const workoutsReducer = (state, action) => {
 }
 
 export const WorkoutsContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(workoutsReducer, { 
-    workouts: null
-  }, () => {
+  const [state, dispatch] = useReducer(workoutsReducer,[], () => {
     const localData = localStorage.getItem('workouts')
-    return localData ? JSON.parse(localData) : []
+      return localData ? JSON.parse(localData) : []
   })
 
   useEffect(() => {
