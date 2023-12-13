@@ -47,6 +47,7 @@ const WorkoutForm = () => {
       setTitle('')
       setLoad('')
       setReps('')
+      setTime('')
       dispatch({type: 'CREATE_WORKOUT', payload: json})
       navigate('/')
     }
